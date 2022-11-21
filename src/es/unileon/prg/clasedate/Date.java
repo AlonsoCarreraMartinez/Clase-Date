@@ -57,7 +57,7 @@ public class Date {
 		
     public boolean IsSameDay(Date another){
 
-    //Este método comprueba que sea el mismo día
+    // Este método comprueba que sea el mismo día.
 
     boolean MismoDia = false;
 
@@ -84,7 +84,9 @@ public class Date {
     }
     public boolean IsSameMonth(Date another){
 
-    //Este método comprueba que sea el mismo mes
+    // Este método comprueba que sea el mismo mes.
+
+    boolean MismoMes = false;
 
     if(this.month == another.getMonth()){
         MismoMes = true;
@@ -99,14 +101,14 @@ public class Date {
 	
 	public void setYear (int year) {
 
-    //verifica el año
+    // verifica el año.
     
 		this.year = year;
     }
     
     public boolean IsSameYear(Date another){
 
-    //Este método comprueba que sea el mismo mes
+    // Este método comprueba que sea el mismo mes.
 
     boolean MismoAño = false;
 
@@ -123,7 +125,7 @@ public class Date {
 
     public boolean IsSame(Date another){
 
-    //Este método comprueba que sea la misma fecha
+    // Este método comprueba que sea la misma fecha.
 
     boolean MismaFecha = false;
     
@@ -139,7 +141,7 @@ public class Date {
     }
     public string getNamesOfTheMonths() {
         
-    //Con este método indicamos el nombre de cada mes.
+    // Con este método indicamos el nombre de cada mes.
 
         String nameMonths;
 
@@ -199,15 +201,15 @@ public class Date {
         return nameMonths;
     }
     
-    //DUDA ¿Es necesario volver aponer lo de los meses? ¿Recuerda preguntar?
+    //DUDA ¿Es necesario volver aponer lo de los meses? ¡Recuerda preguntar!
 
     public string getNamesSeasons() {
         
-    //Con este método indicamos los meses que pertenecen a cada estación del año.
+    // Con este método indicamos los meses que pertenecen a cada estación del año.
 
-        String nameSeason;
+    String nameSeason;
 
-        nameSeason = "";
+    nameSeason = "";
 
     switch (this.month){
 
@@ -239,8 +241,152 @@ public class Date {
         return nameSeason;
 
     }
+     }
     
+    public String getMonthsLefthUntil(){
+
+    // Con este método indicamos los meses que quedan hasta el final del año.
+
+    String Builder MonthsLefthUntil = new StringBuilder();
+
+    for (int i=12, <=this.month, i-- ) {
+        MonthsLefthUntil.appened(i);
     }
+    return MonthsLefthUntil.toString();
+    }
+
+    public String DateStringVersion(){
+    
+    /* En caso de que el formato sea por ejemplo 24/11/2022
+    este método mostrará cualquier fecha con este mismo formato*/
+
+    return (this.day+"/"+this.month+"/"+this.year);
+    }
+
+    public String getDatesUntilTheEndMonth() {
+        
+    // Con este método devolvemos las fechas que quedan hasta el final del mes
+    
+    String Builder DatesUntilTheEndMonth = new StringBuilder();
+    
+    switch (this.month){
+    case 2:
+
+        for (int i=1; i<28; i++ ) {
+            DatesUntilTheEndMonth.appened(i+"/"+this.month+"/"+this.year);
+     }
+     break;		
+    
+    case 4:
+    case 6:
+    case 9:
+    case 11:
+
+        for (int i=1; i<30; i++ ) {
+            DatesUntilTheEndMonth.appened(i+"/"+this.month+"/"+this.year);
+     }
+     break;
+    
+    case 1: 
+    case 3: 
+    case 5: 
+    case 7: 
+    case 8: 
+    case 10: 
+    case 12:
+        for (int i=1; i<31; i++ ) {
+            DatesUntilTheEndMonth.appened(i+"/"+this.month+"/"+this.year);
+     }
+     break;
+    }
+        return DatesUntilTheEndMonth.toString();
+    }   
+    public String getMonthsSameNumberOfDays() {
+        
+    /* Con este método mostramos el resto de meses 
+    con los mimos días que el mes de la fecha.]*/
+        
+    String Builders Months = new StringBuilder();
+        
+    switch (this.month){
+        
+        case 1:
+            Months = "Marzo, Mayo, Julio, Agosto, October, December";
+         break;
+
+        case 2:
+            Months = "Febrero";
+         break;
+
+        case 3:
+            Months = "Enero, Mayo, Julio, Agosto, October, December";
+         break;
+
+        case 4:
+            Months = "Junio, Septiembre, Noviembre";
+         break;
+
+        case 5:
+            Months = "Enero, Marzo, Julio, Agosto, October, December";
+         break;
+
+        case 6:
+            Months = "Abril, Septiembre, Noviembre";
+         break;
+
+        case 7:
+            Months = "Enero, Marzo, Mayo, Agosto, October, December";
+         break;
+
+        case 8:
+            Months = "Enero, Marzo, Mayo, Julio, October, December";
+         break;
+
+        case 9:
+            Months = "Abril, Junio, Noviembre";
+         break;
+
+        case 10:
+            Months = "Enero, Marzo, Mayo, Julio, Agosto, December";
+         break;
+
+        case 11:
+            Months = "Abril, Junio, Septiembre";
+         break;
+
+        case 12:
+            Months = "Enero, Marzo, Mayo, Julio, Agosto, October";
+         break;
+
+		}
+        return Months.toString();
+
+
+    }
+
+    public String getDaysSinceFirstDayYear(){
+
+    /*Con este método mostraremos los días que han pasado desde 
+    la fecha hasta el primer dia del año*/
+    
+    StringBuilder DaysSinceFirstDayYear = new StringBuilder();
+
+    for(int i=1; i<365; i++){
+        DaysSinceFirstDayYear.appened(i);
+    }
+    return DaysSinceFirstDayYear;
+
+
+
+
+    }
+        
+
+        
+    
+
+
+    
 
 }
 	
