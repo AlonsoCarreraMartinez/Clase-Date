@@ -4,9 +4,9 @@ public class Date {
 
     // Declaración variables
 
-	private int day = 24;
-	private int month = 11;
-	private int year = 2022;
+	private int day = 1;
+	private int month = 1;
+	private int year = 2017;
 	
 	public Date (int day, int month, int year) throws DateException {
 		
@@ -59,16 +59,16 @@ public class Date {
 
     // Este método comprueba que sea el mismo día.
 
-    boolean MismoDia = false;
+    boolean SameDay = false;
 
     if(this.day == another.getDay()){
-        MismoDia = true;
+        SameDay = true;
     System.out.println("Es el mismo dia");
     }else{
-        MismoDia = false;
+        SameDay = false;
     System.out.println("No es el mismo dia");
      }
-        return MismoDia;
+        return SameDay;
     }
         
 	public void setMonth (int month) throws DateException {
@@ -86,17 +86,17 @@ public class Date {
 
     // Este método comprueba que sea el mismo mes.
 
-    boolean MismoMes = false;
+    boolean SameMonth = false;
 
     if(this.month == another.getMonth()){
-        MismoMes = true;
+        SameMonth = true;
     System.out.println("Es el mismo mes");
     }else{
-        MismoMes = false;
+        SameMonth = false;
     System.out.println("No es el mismo mes");
 
      }
-        return MismoDia;
+        return SameMonth;
     }
 	
 	public void setYear (int year) {
@@ -110,34 +110,34 @@ public class Date {
 
     // Este método comprueba que sea el mismo mes.
 
-    boolean MismoAño = false;
+    boolean SameYear = false;
 
     if(this.year == another.getYear()){
-        MismoAño = true;
+        SameYear= true;
     System.out.println("Es el mismo año");
     }else{
-        MismoAño = false;
+        SameYear = false;
     System.out.println("Es el mismo año");
 
     }
-        return MismoAño;
+        return SameYear;
     }
 
     public boolean IsSame(Date another){
 
     // Este método comprueba que sea la misma fecha.
 
-    boolean MismaFecha = false;
+    boolean SameDate = false;
     
     if(this.day == another.getDay()) && (this.month == another.getMonth()) && (this.year == another.getYear()) {
-        MismaFecha  = true;
+        SameDate = true;
     System.out.println("Es la misma fecha");
     }else{
-        MismaFecha  = false;
+        SameDate  = false;
     System.out.println("Es la misma fecha");
     
     }
-        return MismaFecha;
+        return SameDate;
     }
     public string getNamesOfTheMonths() {
         
@@ -201,44 +201,42 @@ public class Date {
         return nameMonths;
     }
     
-    //DUDA ¿Es necesario volver aponer lo de los meses? ¡Recuerda preguntar!
-
     public string getNamesSeasons() {
         
     // Con este método indicamos los meses que pertenecen a cada estación del año.
 
-    String nameSeason;
+    String Season;
 
-    nameSeason = "";
+    Season = "";
 
     switch (this.month){
 
         case 9:
         case 10:
         case 11:
-            nameSeason = "Otoño";
+            Season = "Otoño";
          break;
 
         case 12:
         case 1:
         case 2:
-            nameSeason = "Invierno";
+            Season = "Invierno";
          break;
         
         case 3:
         case 4:
         case 5:
-            nameSeason = "Primavera";
+            Season = "Primavera";
          break;
 
         case 6:
         case 7:
         case 8:
-            nameSeason = "Verano";
+            Season = "Verano";
          break;
 
         }
-        return nameSeason;
+        return Season;
 
     }
      }
@@ -247,7 +245,7 @@ public class Date {
 
     // Con este método indicamos los meses que quedan hasta el final del año.
 
-    String Builder MonthsLefthUntil = new StringBuilder();
+    StringBuilder MonthsLefthUntil = new StringBuilder();
 
     for (int i=12, <=this.month, i-- ) {
         MonthsLefthUntil.appened(i);
@@ -257,7 +255,7 @@ public class Date {
 
     public String DateStringVersion(){
     
-    /* En caso de que el formato sea por ejemplo 24/11/2022
+    /* En caso de que el formato sea por ejemplo 1/17/2017
     este método mostrará cualquier fecha con este mismo formato*/
 
     return (this.day+"/"+this.month+"/"+this.year);
@@ -306,57 +304,32 @@ public class Date {
     /* Con este método mostramos el resto de meses 
     con los mimos días que el mes de la fecha.]*/
         
-    String Builders Months = new StringBuilder();
+    StringBuilders Months = new StringBuilder();
         
     switch (this.month){
         
-        case 1:
-            Months = "Marzo, Mayo, Julio, Agosto, October, December";
-         break;
-
         case 2:
             Months = "Febrero";
          break;
 
-        case 3:
-            Months = "Enero, Mayo, Julio, Agosto, October, December";
-         break;
-
         case 4:
-            Months = "Junio, Septiembre, Noviembre";
-         break;
-
-        case 5:
-            Months = "Enero, Marzo, Julio, Agosto, October, December";
-         break;
-
         case 6:
-            Months = "Abril, Septiembre, Noviembre";
+		case 9:
+		case 11:
+            Months = "Abril, Junio, Septiembre, Noviembre";
          break;
 
-        case 7:
-            Months = "Enero, Marzo, Mayo, Agosto, October, December";
-         break;
-
-        case 8:
-            Months = "Enero, Marzo, Mayo, Julio, October, December";
-         break;
-
-        case 9:
-            Months = "Abril, Junio, Noviembre";
-         break;
-
-        case 10:
-            Months = "Enero, Marzo, Mayo, Julio, Agosto, December";
-         break;
-
-        case 11:
-            Months = "Abril, Junio, Septiembre";
-         break;
-
+        case 1:
+        case 3: 
+        case 5: 
+        case 7: 
+        case 8: 
+        case 10: 
         case 12:
-            Months = "Enero, Marzo, Mayo, Julio, Agosto, October";
+            Months = "Enero, Marzo, Mayo, Julio, Agosto, October, December";
          break;
+
+        
 
 		}
         return Months.toString();
@@ -364,17 +337,93 @@ public class Date {
 
     }
 
-    public String getDaysSinceFirstDayYear(){
+    public int getDaysSinceFirstDayYear(){
 
     /*Con este método mostraremos los días que han pasado desde 
     la fecha hasta el primer dia del año*/
     
-    StringBuilder DaysSinceFirstDayYear = new StringBuilder();
+    int daysSince = this.day;
 
-    for(int i=1; i<365; i++){
-        DaysSinceFirstDayYear.appened(i);
+    for(int i= this.month-1, i>=1; i--){
+        daysSince.appened(i);
     }
-    return DaysSinceFirstDayYear;
+    return daysSince;
+
+    public int NumberOfAttempts()
+
+    /* Este método indica el número de intentos hasta que acierte el día escrito,
+    mi método tiene un error y es que no he logrado que identifique los meses
+    por lo que si por ejemplo introdujeramos el día 24/11/22 en la cónsola, en 
+    caso de acertar, aparecería el número 327 que son los días que han pasado
+    desde el 1/1/22*/
+    
+
+    int i=365,randomDay;
+    int numAttempts = 0;
+
+    do{
+        System.out.println("Introduce el día:");
+		randomDay = Teclado.readInteger(i);
+    i--;
+    }
+    while(i=randomDay){
+     if(int i == randomDay){
+        numAttempts = 1
+    }else if(int i <= randomDay){
+        numAttempts = numAttempts + 1
+    }else (int i >= randomDay){
+        numAttempts = numAttempts + 1
+    }
+        return numAttempts;
+        }
+    }
+
+
+    public String DaysOfTheWeek(int i=365,randomDay;) throws DateException {
+    
+     // Con este método dividimos los 365 diás del año en semanas con un módulo 7.
+
+    StringBuilder diasemana = new StringBuilder();
+
+    int DaysOfTheWeek = (this.DaysSinceFirstDayYear(mod 7));
+
+    switch (DaysOfTheWeek) {
+        case 1:
+            diaSemana.append("Lunes");
+         break;
+
+         case 2:
+            diaSemana.append("Martes");
+         break;
+
+         case 3:
+            diaSemana.append("Miércoles");
+         break;
+
+         case 4:
+            diaSemana.append("Jueves");
+         break;
+
+         case 5:
+            diaSemana.append("Viernes");
+         break;
+
+         case 6:
+            diaSemana.append("Sábado");
+         break;
+
+         case 7:
+            diaSemana.append("Domingo");
+         break;
+        
+        }
+
+        return diaSemana.toString();
+    }
+
+
+
+    }
 
 
 
