@@ -139,7 +139,7 @@ public class Date {
     }
         return SameDate;
     }
-    public string getNamesOfTheMonths() {
+    public string getMonthName() {
         
     // Con este método indicamos el nombre de cada mes.
 
@@ -150,58 +150,58 @@ public class Date {
     switch (this.month) {
         
         case 1:
-            nameMonths = "Enero";
+            nameMonths = "January";
          break;
 
         case 2:
-            nameMonths = "Febrero";
+            nameMonths = "February";
          break;
 
         case 3:
-            nameMonths = "Marzo";
+            nameMonths = "March";
          break;
 
         case 4:
-            nameMonths = "Abril";
+            nameMonths = "April";
          break;
 
         case 5:
-            nameMonths = "Mayo"; 
+            nameMonths = "May"; 
          break;
 
         case 6:
-            nameMonths = "Junio";
+            nameMonths = "June";
          break;
 
         case 7:
-            nameMonths = "Julio";
+            nameMonths = "July";
          break;
 
         case 8:
-            nameMonths = "Agosto";
+            nameMonths = "August";
          break;
 
         case 9:
-            nameMonths = "Septiembre";
+            nameMonths = "September";
          break;
 
         case 10:
-            nameMonths = "Octubre";
+            nameMonths = "October";
          break;
 
         case 11:
-            nameMonths = "Noviembre";
+            nameMonths = "November";
          break;
 
         case 12:
-            nameMonths = "Diciembre";
+            nameMonths = "December";
          break;
 
 		}
         return nameMonths;
     }
     
-    public string getNamesSeasons() {
+    public string getSeasonName() {
         
     // Con este método indicamos los meses que pertenecen a cada estación del año.
 
@@ -214,25 +214,25 @@ public class Date {
         case 9:
         case 10:
         case 11:
-            Season = "Otoño";
+            Season = "Autumn";
          break;
 
         case 12:
         case 1:
         case 2:
-            Season = "Invierno";
+            Season = "Winter";
          break;
         
         case 3:
         case 4:
         case 5:
-            Season = "Primavera";
+            Season = "Spring";
          break;
 
         case 6:
         case 7:
         case 8:
-            Season = "Verano";
+            Season = "Summer";
          break;
 
         }
@@ -241,7 +241,7 @@ public class Date {
     }
      }
     
-    public String getMonthsLefthUntil(){
+    public String getMonthsLeft(){
 
     // Con este método indicamos los meses que quedan hasta el final del año.
 
@@ -253,7 +253,7 @@ public class Date {
     return MonthsLefthUntil.toString();
     }
 
-    public String DateStringVersion(){
+    public String testToString(){
     
     /* En caso de que el formato sea por ejemplo 1/17/2017
     este método mostrará cualquier fecha con este mismo formato*/
@@ -261,7 +261,7 @@ public class Date {
     return (this.day+"/"+this.month+"/"+this.year);
     }
 
-    public String getDatesUntilTheEndMonth() {
+    public String getDaysLeftOfMonth() {
         
     // Con este método devolvemos las fechas que quedan hasta el final del mes
     
@@ -299,7 +299,7 @@ public class Date {
     }
         return DatesUntilTheEndMonth.toString();
     }   
-    public String getMonthsSameNumberOfDays() {
+    public String getMonthsSameDays() {
         
     /* Con este método mostramos el resto de meses 
     con los mimos días que el mes de la fecha.]*/
@@ -309,14 +309,14 @@ public class Date {
     switch (this.month){
         
         case 2:
-            Months = "Febrero";
+            Months = "February";
          break;
 
         case 4:
         case 6:
 		case 9:
 		case 11:
-            Months = "Abril, Junio, Septiembre, Noviembre";
+            Months = "April, June, September, November";
          break;
 
         case 1:
@@ -326,7 +326,7 @@ public class Date {
         case 8: 
         case 10: 
         case 12:
-            Months = "Enero, Marzo, Mayo, Julio, Agosto, October, December";
+            Months = "January, March, May, July, August, October, December";
          break;
 
         
@@ -337,7 +337,7 @@ public class Date {
 
     }
 
-    public int getDaysSinceFirstDayYear(){
+    public int getDaysPast(){
 
     /*Con este método mostraremos los días que han pasado desde 
     la fecha hasta el primer dia del año*/
@@ -349,7 +349,7 @@ public class Date {
     }
     return daysSince;
 
-    public int NumberOfAttempts()
+    public int testNumRandomTriesEqualDate()
 
     /* Este método indica el número de intentos hasta que acierte el día escrito,
     mi método tiene un error y es que no he logrado que identifique los meses
@@ -385,35 +385,35 @@ public class Date {
 
     StringBuilder diasemana = new StringBuilder();
 
-    int DaysOfTheWeek = (this.DaysSinceFirstDayYear(mod 7));
+    int DaysOfTheWeek = (this.DaysPast(mod 7));
 
     switch (DaysOfTheWeek) {
         case 1:
-            diaSemana.append("Lunes");
+            diaSemana.append("Monday");
          break;
 
          case 2:
-            diaSemana.append("Martes");
+            diaSemana.append("Tuesday");
          break;
 
          case 3:
-            diaSemana.append("Miércoles");
+            diaSemana.append("Wednesday");
          break;
 
          case 4:
-            diaSemana.append("Jueves");
+            diaSemana.append("Thursday");
          break;
 
          case 5:
-            diaSemana.append("Viernes");
+            diaSemana.append("Friday");
          break;
 
          case 6:
-            diaSemana.append("Sábado");
+            diaSemana.append("Saturday");
          break;
 
          case 7:
-            diaSemana.append("Domingo");
+            diaSemana.append("Sunday");
          break;
         
         }
